@@ -10,7 +10,7 @@
 
   # Collected by using 33 keywords sets : "BlackLivesMatter BTS Army", "BLM BTS Army", "BlackLivesMatter BTS ARMY", "BLM BTS ARMY", "BlackLivesMatter bts army", "BLM bts army", "BLM btsarmy Dallas", "BLM bts army Dallas", "BLM BTSARMY Dallas", "BLM BTS ARMY Dallas", "iWatchDallas", "iWatch Dallas", "bts army blm", "btsarmy blm", "BTS Army WhiteLivesMatter", "bts army WhiteLivesMatter", "BTS army WhiteLivesMatter", "BTS Army BlackLivesMatter WhiteLivesMatter", "BTS army BlackLivesMatter WhiteLivesMatter", "BTSARMY BlackLivesMatter WhiteLivesMatter", "btsarmy BlackLivesMatter WhiteLivesMatter", "BTSARMY BLM WhiteLivesMatter", "BTSARMY blm WhiteLivesMatter", "MatchAMillion", "MatchaMillion", "matchamillion", "btsarmy BlueLivesMatter", "bts army BlueLivesMatter", "BTS ARMY BlueLivesMatter", "BTS ARMY bluelivesmatter", "BTSARMY bluelivesmatter", "btsarmy bluelivesmatter", "bts army bluelivesmatter"
 
-# TOTAL : 1421 tweets (filtered tweets total)
+# TOTAL : 1422 tweets (filtered tweets total)
 
   # 14 key words used to filter tweets : act, contribute, dallas, donate, floyd, help, icantbreathe, iwatch, matchamillion, mobilize, organize, police, prepare, support.
 
@@ -20,7 +20,7 @@
 
   # 3 filtered lists empty : Contribute_MayJune2020, matchamillion_MayJune2020, mobilize_MayJune2020
 
-# TOTAL : 87 tweets (Cases identified for analysis)
+# TOTAL : 106 tweets (cases identified for analysis)
 
 ### START
 
@@ -367,14 +367,9 @@ rbind(actJuneJuly2020_CASE, actMayJune2020_CASE, contributeJuneJuly2020_CASE, do
 
 A0_Potential_Cases <- distinct(A0_Potential_Cases)
 
-# 6. Extract publications from A0_CORE_Extraction to A0_ANALYSIS_Extraction to single out 10 cases for analysis
+# 6. Export A0_CORE_Extraction, A0_ANALYSIS_Extraction, and filtered data sects to Excel document
 
-A0_Analysis_Cases <- 
-  A0_Potential_Cases[c(85,4,106,35,36,52,30,60,53,15), ]
-
-# 7. Export A0_CORE_Extraction, A0_ANALYSIS_Extraction, and filtered data sects to Excel document
-
-A1_CH_MEMOIR_DATA_FINAL <- list('Sheet1' = A0_Analysis_Cases, 'Sheet2' = A0_Potential_Cases, 'Sheet3' = A0_Filtered_List_Total, 'Sheet4' = MayJune2020_data, 'Sheet5' = JuneJuly2020_data)
+A1_CH_MEMOIR_DATA_FINAL <- list('Sheet1' = A0_Analysis_Cases)
                            
 openxlsx::write.xlsx(A1_CH_MEMOIR_DATA_FINAL, file = "CH_MEMOIR_DATA_FINAL.xlsx") 
 
